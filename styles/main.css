@@ -1,0 +1,168 @@
+* {
+    background-color: #f2e9e1;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Header css */
+
+header {
+    border-bottom: 2px solid #c3a689;
+    padding-bottom: 10px;
+}
+
+.search-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    border: 1px solid #c3a689;
+    border-radius: 7px;
+    box-shadow: 0 4px 6px rgba(40, 28, 21, 0.1);
+    display: none;
+    opacity: 0;
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Коли додається клас .active */
+.search-bar.active {
+    display: flex;
+    top: 20px;
+    opacity: 1;
+}
+
+
+.navbar {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    height: 100%;
+    padding-top: 20px;
+    list-style-type: none;
+}
+
+.nav-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #c3a689;
+}
+
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    max-width: 300px;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+.navbar-toggler {
+    padding-top: 0;
+    right: 0;
+}
+
+.dropdown-menu {
+    padding: 0;
+
+}
+
+.dropdown-menu a:hover {
+    background-color: transparent;
+    color: #c3a689;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    max-width: 70%;
+}
+
+.store-icons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.store-icons img {
+    height: 20px;
+    width: 20px;
+}
+
+/* selection css */
+
+
+
+
+/* Стилі для маленьких екранів header*/
+@media (max-width: 991px) {
+    .nav-left {
+        order: 2;
+        width: auto;
+        max-width: 50px;
+    }
+
+    .nav-center {
+        order: 1;
+        margin-left: 30%;
+        max-width: 40%;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .offcanvas.offcanvas-end {
+        width: 400px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .navbar-nav a {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .dropdown-item {
+        padding: 0;
+        display: block;
+        width: 80%;
+    }
+
+
+
+}
