@@ -31,6 +31,7 @@ header {
     display: flex;
     top: 20px;
     opacity: 1;
+    outline: none;
 }
 
 
@@ -177,7 +178,135 @@ header {
     text-decoration: none;
 }
 
-/* Стилі для маленьких екранів header*/
+.button-shop-now:hover {
+    background-color: #402e32;
+}
+
+.button-shop-now:hover a {
+    color: #c3a689;
+}
+
+.store-advantages {
+    margin-top: 180px;
+}
+
+.advantage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.advantage-icon {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    font-size: 24px;
+    color: #694b51;
+    white-space: nowrap;
+}
+
+.abous-us {
+    margin-top: 180px;
+}
+
+
+.text-about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #694b51;
+}
+
+.text-about-us h2 {
+    color: #402e32;
+}
+
+.btn-about-us {
+    width: 130px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid#696263;
+    background-color: transparent;
+    text-align: center;
+}
+
+.btn-about-us a {
+    font-size: 20px;
+    background: none;
+    color: #402e32;
+    text-decoration: none;
+}
+
+.btn-about-us:hover {
+    background-color: #69626333;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 700px;
+    color: #402e32;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.send-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.subscribe input {
+    padding: 10px;
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+
+
+/* footer */
+
+
+footer {
+    border-top: 2px solid #c3a689;
+    padding-top: 10px;
+}
+
+.rights {
+    display: flex;
+    justify-content: center;
+}
+
+/* media запити */
+
+@media (max-width: 1024px) {
+    .advantage-item p {
+        font-size: 18px;
+    }
+
+    .advantage-icon {
+        height: 85px;
+        width: 85px;
+    }
+}
+
 @media (max-width: 991px) {
     .nav-left {
         order: 2;
@@ -239,7 +368,20 @@ header {
     .button-shop-now a {
         font-size: 18px;
     }
+
+    .btn-about-us {
+        width: 120px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .btn-about-us a {
+        font-size: 18px;
+    }
+
+
 }
+
 
 @media (max-width: 480px) {
     .main-text h1 {
@@ -258,5 +400,28 @@ header {
 
     .button-shop-now a {
         font-size: 16px;
+    }
+
+    .btn-about-us {
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .btn-about-us a {
+        font-size: 16px;
+    }
+
+    .advantage-icon {
+        height: 80px;
+        width: 80px;
+    }
+
+    .advantage-item p {
+        font-size: 18px;
+    }
+
+    .subscribe input {
+        width: 300px;
     }
 }
