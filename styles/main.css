@@ -6,6 +6,8 @@
     font-style: normal;
 }
 
+/* home */
+
 /* Header css */
 
 header {
@@ -126,20 +128,23 @@ header {
     padding: 0;
 }
 
-.flower-border {
+.flower-border,
+.about {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.flower-border img {
+.flower-border img,
+.aboutus {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-.main-text {
+.main-text,
+.about-text {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -149,10 +154,12 @@ header {
     text-align: center;
     color: white;
     z-index: 2;
+
 }
 
 .main-text h1,
-.main-text h3 {
+.main-text h3,
+.about h1 {
     margin: 20px;
     color: #402e32;
     background: none;
@@ -187,10 +194,12 @@ header {
 }
 
 .store-advantages {
+    height: 700px;
     margin-top: 180px;
 }
 
-.advantage-item {
+.advantage-item,
+.photo-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -294,6 +303,50 @@ footer {
     justify-content: center;
 }
 
+/* About */
+
+/* section */
+
+
+
+.breadcrumb-item a {
+    text-decoration: none;
+}
+
+.text-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    height: 700px;
+    width: 600px;
+}
+
+.our-team {
+    height: 700px;
+    padding: 0 60px;
+}
+
+.photo-us {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.photo-us img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
 /* media запити */
 
 @media (max-width: 1024px) {
@@ -346,6 +399,11 @@ footer {
         width: 80%;
     }
 
+    .our-team {
+        order: 1;
+    }
+
+
 
 
 }
@@ -377,6 +435,11 @@ footer {
 
     .btn-about-us a {
         font-size: 18px;
+    }
+
+
+    .photo-us {
+        grid-template-columns: 1fr;
     }
 
 
@@ -421,7 +484,14 @@ footer {
         font-size: 18px;
     }
 
+
+    .photo-us {
+        grid-template-columns: 1fr;
+    }
+
     .subscribe input {
         width: 300px;
     }
+
+
 }
