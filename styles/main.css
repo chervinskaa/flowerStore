@@ -4,6 +4,7 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    outline: 4px solid green !important;
 }
 
 /* home */
@@ -124,7 +125,8 @@ header {
 /* selection css */
 
 /* Flowers for all the feels  */
-.flowers {
+.flowers,
+.about {
     padding: 0;
 }
 
@@ -142,6 +144,7 @@ header {
     height: auto;
     display: block;
 }
+
 
 .main-text,
 .about-text {
@@ -228,6 +231,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     color: #694b51;
 }
 
@@ -319,22 +323,41 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
+    /* Використовуємо padding замість margin для гнучкості */
     font-size: 24px;
-    height: 700px;
-    width: 600px;
+    height: auto;
+    /* Висота блоку не повинна бути фіксованою */
+    width: 100%;
+    /* Ширина на 100% екрану */
+    box-sizing: border-box;
+    /* Щоб padding не виходив за межі контейнера */
+    max-width: 1200px;
+    /* Максимальна ширина для великих екранів */
+    margin: 0 auto;
+    /* Центруємо блок на сторінці */
+}
+
+.text-about p1 {
+    padding-top: 200px;
+}
+
+.text-about p2 {
+    padding-bottom: 200px;
 }
 
 .our-team {
-    height: 700px;
-    padding: 0 60px;
+    padding: 250px 60px;
 }
 
 .photo-us {
     padding-top: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     width: 100%;
+    height: auto;
+
 }
 
 .photo-us img {
@@ -399,9 +422,6 @@ footer {
         width: 80%;
     }
 
-    .our-team {
-        order: 1;
-    }
 
 
 
@@ -438,9 +458,17 @@ footer {
     }
 
 
-    .photo-us {
-        grid-template-columns: 1fr;
+
+
+    .our-team {
+        height: auto;
+        width: auto;
     }
+
+    .photo-us {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 
 
 }
