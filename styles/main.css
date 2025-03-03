@@ -126,12 +126,14 @@ header {
 
 /* Flowers for all the feels  */
 .flowers,
-.about {
+.about,
+.shop {
     padding: 0;
 }
 
 .flower-border,
-.about {
+.about,
+.shop {
     position: relative;
     display: flex;
     justify-content: center;
@@ -147,7 +149,8 @@ header {
 
 
 .main-text,
-.about-text {
+.about-text,
+.shop-text {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -161,13 +164,25 @@ header {
 }
 
 .main-text h1,
-.main-text h3,
-.about h1 {
+.main-text h3 {
     margin: 20px;
     color: #402e32;
     background: none;
     white-space: nowrap;
+
 }
+
+.about h1,
+.shop h1 {
+    margin: 20px;
+    color: #402e32;
+    background: none;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    font-size: 70px;
+}
+
+
 
 
 
@@ -202,7 +217,8 @@ header {
 }
 
 .advantage-item,
-.photo-item {
+.photo-item,
+.shop-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,10 +327,15 @@ footer {
 
 /* section */
 
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+}
 
-
-.breadcrumb-item a {
+.breadcrumb-item a,
+.items a {
     text-decoration: none;
+    color: rgba(13, 11, 9, 0.856);
 }
 
 .text-about {
@@ -324,18 +345,12 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    /* Використовуємо padding замість margin для гнучкості */
     font-size: 24px;
     height: auto;
-    /* Висота блоку не повинна бути фіксованою */
     width: 100%;
-    /* Ширина на 100% екрану */
     box-sizing: border-box;
-    /* Щоб padding не виходив за межі контейнера */
     max-width: 1200px;
-    /* Максимальна ширина для великих екранів */
     margin: 0 auto;
-    /* Центруємо блок на сторінці */
 }
 
 .text-about p1 {
@@ -365,6 +380,60 @@ footer {
     height: auto;
     object-fit: cover;
     border-radius: 50%;
+}
+
+
+/* shop */
+
+.shop {
+    height: 600px;
+}
+
+.shop-text {
+    align-items: center;
+}
+
+.result-sorting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-sorting p {
+    margin: 0;
+    font-size: 20px;
+    color: #a0a0a0;
+}
+
+.shop-items {
+    margin: 40px 20px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.items p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.shop-item {
+    height: 300px;
+    margin-bottom: 20px;
+    object-fit: cover;
+
 }
 
 
@@ -457,9 +526,6 @@ footer {
         font-size: 18px;
     }
 
-
-
-
     .our-team {
         height: auto;
         width: auto;
@@ -469,7 +535,9 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
+    .shop h1 {
+        font-size: 50px;
+    }
 
 }
 
