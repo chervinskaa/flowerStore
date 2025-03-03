@@ -406,14 +406,13 @@ footer {
 }
 
 .shop-items {
-    margin: 40px 20px;
     padding: 20px;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+
 }
 
 .items {
@@ -426,17 +425,78 @@ footer {
 
 .items p {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.shop-item-wrapper {
+    position: relative;
 }
 
 .shop-item {
     height: 300px;
+    border-radius: 20px;
     margin-bottom: 20px;
     object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
 
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    background: #c3a68982;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
+.cart-text {
+    background: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.5s ease-in-out;
+    background: none;
+}
+
+.shop-item-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.shop-item-wrapper:hover .cart-icon {
+    transform: scale(1.1);
+}
+
+
+.groupbtn {
+    display: flex;
+    justify-content: center;
+}
+
+.groupbtn button {
+    color: #402e32;
+    border-color: #402e32;
+}
+
+.groupbtn button:hover {
+    color: #402e32;
+    background: #c3a689;
+}
 
 
 /* media запити */
