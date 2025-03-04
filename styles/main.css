@@ -4,7 +4,6 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    outline: 4px solid green !important;
 }
 
 /* home */
@@ -393,17 +392,84 @@ footer {
     align-items: center;
 }
 
-.result-sorting {
+.sort-by {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 65px;
+    padding-bottom: 30px;
 }
 
-.result-sorting p {
-    margin: 0;
-    font-size: 20px;
-    color: #a0a0a0;
+.container-fluid.sort-by {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.custom-select {
+    position: relative;
+    width: 200px;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    border: 2px solid rgba(13, 11, 9, 0.856);
+    border-radius: 5px;
+    background-color: #c3a689;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-select::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #402e32;
+    pointer-events: none;
+}
+
+.selected-option {
+    padding: 10px;
+    color: #402e32;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: #c3a689;
+    border: 1px solid rgba(13, 11, 9, 0.856);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.option {
+    padding: 10px;
+    color: #402e32;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #c3a6898f;
+}
+
+.custom-select-wrapper.open .options {
+    display: block;
+}
+
+.custom-select select {
+    display: none;
+}
+
+
+
+
 
 .shop-items {
     padding: 20px;
@@ -486,18 +552,32 @@ footer {
 .groupbtn {
     display: flex;
     justify-content: center;
+    gap: 5px;
 }
 
 .groupbtn button {
     color: #402e32;
     border-color: #402e32;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .groupbtn button:hover {
-    color: #402e32;
-    background: #c3a689;
+    background: #c3a68990;
+    font-weight: bold;
 }
 
+.groupbtn button.active {
+    background: #c3a689;
+    font-weight: bold;
+}
+
+.groupbtn button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 /* media запити */
 

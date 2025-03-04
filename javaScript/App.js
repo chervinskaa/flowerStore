@@ -41,20 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// result-sorting
-document.addEventListener("DOMContentLoaded", function () {
-    let allItems = document.querySelectorAll(".items").length; // Загальна кількість товарів
 
-    // Підрахунок видимих товарів через getComputedStyle
-    let visibleItems = Array.from(document.querySelectorAll(".items")).filter(item =>
-        getComputedStyle(item).display !== "none"
-    ).length;
-
-    // Знаходимо елемент з класом .result-sorting та його <p>
-    let sortingText = document.querySelector(".result-sorting p");
-    if (sortingText) {
-        sortingText.textContent = `Showing ${visibleItems} of ${allItems} results`;
-    }
-});
-
-console.log(sortingText)

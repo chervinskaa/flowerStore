@@ -14,6 +14,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="javaScript/App.js" defer></script>
+    <script src="javaScript/pagination.js" defer></script>
+    <script src="javaScript/sort.js" defer></script>
     <title>Flower shop</title>
 </head>
 
@@ -103,13 +105,24 @@
             </div>
         </div>
 
-        <div class="container-fluid ">
-            <div class="result-sorting">
-                <p>Showing i of p results</p>
-                <!-- toDO:later -->
-                <p>sort by</p>
+        <div class="container-fluid sort-by">
+            <label for="sortOptions">Sort by:</label>
+            <div class="custom-select">
+                <div class="custom-select-wrapper">
+                    <div class="selected-option">Default sorting</div>
+                    <div class="options">
+                        <div class="option" data-value="default">Default sorting</div>
+                        <div class="option" data-value="name-asc">Name (A-Z)</div>
+                        <div class="option" data-value="name-desc">Name (Z-A)</div>
+                        <div class="option" data-value="price-asc">Price (Low-High)</div>
+                        <div class="option" data-value="price-desc">Price (High-Low)</div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
 
         <div class="container-fluid shop-items">
             <div class="row">
@@ -124,8 +137,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For queen</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -139,8 +152,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For princess</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -153,8 +166,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For the best woman</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -168,8 +181,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For queen</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -183,22 +196,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For princess</a></h2>
-                    <p>95$</p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
-                    <div class="shop-item-wrapper">
-                        <img class="shop-item w-100" src="sources/photos/flowerbucket.webp" alt="...">
-                        <div class="overlay">
-                            <a href="#" class="cart-text">
-                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
-                                to Cart
-                            </a>
-                        </div>
-                    </div>
-                    <h2><a href="#">For the best woman</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -212,8 +211,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For queen</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -227,8 +226,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For princess</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -241,8 +240,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For the best woman</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -256,8 +255,8 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For queen</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -271,8 +270,37 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For princess</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
@@ -285,23 +313,340 @@
                             </a>
                         </div>
                     </div>
-                    <h2><a href="#">For the best woman</a></h2>
-                    <p>95$</p>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/flowerbucket.webp" alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/flowerbucket.webp" alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/flowerbucket.webp" alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blossom Dream</a></h2>
+                    <p>45$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Blue Elegance</a></h2>
+                    <p>75$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/flowerbucket.webp" alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Golden Harmony</a></h2>
+                    <p>60$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-rozovyj-shelk-3-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Pink Symphony</a></h2>
+                    <p>50$</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 items">
+                    <div class="shop-item-wrapper">
+                        <img class="shop-item w-100" src="sources/photos/buket-cvetov-sinee-kryzhevo-2-270x300.jpeg"
+                            alt="...">
+                        <div class="overlay">
+                            <a href="#" class="cart-text">
+                                <img src="sources/icons/icons8-сердце-32.png" alt="Add to Cart" class="cart-icon"> Add
+                                to Cart
+                            </a>
+                        </div>
+                    </div>
+                    <h2><a href="#">Royal Bloom</a></h2>
+                    <p>80$</p>
                 </div>
             </div>
         </div>
 
 
-        <div class="previous-next">
-            <div class="groupbtn">
-                <button type="button" class="btn btn-outline-secondary">Previous</button>
-                <button type="button" class="btn btn-outline-secondary">1</button>
-                <button type="button" class="btn btn-outline-secondary">2</button>
-                <button type="button" class="btn btn-outline-secondary">3</button>
-                <button type="button" class="btn btn-outline-secondary">4</button>
-                <button type="button" class="btn btn-outline-secondary">Next</button>
-            </div>
+
+
+        <div class="groupbtn">
         </div>
+
 
         <div class="container subscribe">
             <p style="font-size:60px;">Subscribe To Get Updates</p>
