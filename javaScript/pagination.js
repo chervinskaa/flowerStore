@@ -56,10 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
         paginationContainer.appendChild(nextButton);
     }
 
-    // toDOBetter:later
 
     // Функція сортування
     function sortItems(criteria) {
+        let container = document.querySelector(".shop-items .row"); 
+
         if (criteria === 'name-asc') {
             allItems.sort((a, b) => a.querySelector('h2 a').textContent.localeCompare(b.querySelector('h2 a').textContent));
         } else if (criteria === 'name-desc') {
@@ -70,8 +71,13 @@ document.addEventListener("DOMContentLoaded", function () {
             allItems.sort((a, b) => parseFloat(b.querySelector('p').textContent.replace('$', '')) - parseFloat(a.querySelector('p').textContent.replace('$', '')));
         }
 
+        // Очищуємо контейнер і додаємо відсортовані елементи
+        container.innerHTML = "";
+        allItems.forEach(item => container.appendChild(item));
+
         showPage(1); // Після сортування відкриваємо першу сторінку
     }
+
 
     // Обробка вибору сортування
     if (sortSelect) {
